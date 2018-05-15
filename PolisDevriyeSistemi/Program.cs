@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PolisDevriyeSistemi
 {
@@ -6,7 +7,9 @@ namespace PolisDevriyeSistemi
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PolisMerkezi polisMerkezi = PolisMerkezi.GetInstance();
+            Arayuz arayuz = new Arayuz();
+            arayuz.Baslat();
         }
     }
 }
