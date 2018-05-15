@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace PolisDevriyeSistemiFormApp
 {
-    internal class Polis : Insan, IPolis
+    public class Polis : Insan, IPolis
     {
         public bool MesgulMu { get; set; }
 

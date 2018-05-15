@@ -27,6 +27,9 @@ namespace PolisDevriyeSistemiFormApp
             _polisler.Add(new Polis("hasan", "duzgidecekmisti", new Konum(x, y)));
             _polisler.Add(new Polis("kemal", "duzgitmeliymis", new Konum(x, y)));
             _polisler.Add(new Polis("salah", "duzgidebilir", new Konum(x, y)));
+
+            AtanamayanOgretmen atanamayanOgretmen = new AtanamayanOgretmen("ismail", "gitmis", new Konum(x, y));
+            _polisler.Add(new PolisAdapter(atanamayanOgretmen));
         }
 
         public static PolisMerkezi GetInstance(int x = 0, int y = 0)
