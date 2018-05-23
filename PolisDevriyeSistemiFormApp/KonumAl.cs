@@ -21,9 +21,15 @@ namespace PolisDevriyeSistemiFormApp
 
         private void btnKonumAl_Click(object sender, EventArgs e)
         {
-            konum.X = konumX.Value;
-            konum.Y = konumY.Value;
-            Close();
+            if (!(konumX.Value == 0 && konumY.Value == 0))
+            {
+                konum.X = konumX.Value;
+                konum.Y = konumY.Value;
+                Close();
+            } else
+            {
+                MessageBox.Show("X: 0 Y: 0 hatali giris yaptiniz! ");
+            }
         }
     }
 }

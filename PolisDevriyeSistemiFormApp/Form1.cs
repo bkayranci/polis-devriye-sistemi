@@ -13,12 +13,14 @@ namespace PolisDevriyeSistemiFormApp
     public partial class Form1 : Form
     {
         public List<Insan> Vatandaslar = new List<Insan>();
-        
+        PolisMerkeziFacade polisMerkeziFacade;
+
         public Form1()
         {
             InitializeComponent();
             PolislerListeGuncelle();
             VatandaslarListeGuncelle();
+            polisMerkeziFacade = new PolisMerkeziFacade();
         }
 
         private void btnVatandasEkle_Click(object sender, EventArgs e)
@@ -113,7 +115,7 @@ namespace PolisDevriyeSistemiFormApp
             kForm.ShowDialog();
 
             raporListBox.Items.Add(string.Format("[kaza] - [{0},{1}] | {2} {3} tarafindan eklendi", konum.X, konum.Y, seciliVatandas.Ad, seciliVatandas.Soyad));
-            PolisMerkezi.GetInstance().SikayetKaydi(new Kaza(konum));
+            polisMerkeziFacade.SikayetEt(new Kaza(konum));
 
             SikayetKuyruguGuncelle();
             PolislerListeGuncelle();
@@ -157,7 +159,7 @@ namespace PolisDevriyeSistemiFormApp
             kForm.ShowDialog();
 
             raporListBox.Items.Add(string.Format("[yaralama] - [{0},{1}] | {2} {3} tarafindan eklendi", konum.X, konum.Y, seciliVatandas.Ad, seciliVatandas.Soyad));
-            PolisMerkezi.GetInstance().SikayetKaydi(new Yaralama(konum));
+            polisMerkeziFacade.SikayetEt(new Yaralama(konum));
 
             SikayetKuyruguGuncelle();
             PolislerListeGuncelle();
