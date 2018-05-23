@@ -65,6 +65,7 @@
     <Compile Include="KonumAl.Designer.cs">
       <DependentUpon>KonumAl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Merkez.cs" />
     <Compile Include="Polis.cs" />
     <Compile Include="PolisAdapter.cs" />
     <Compile Include="PolisMerkezi.cs" />
